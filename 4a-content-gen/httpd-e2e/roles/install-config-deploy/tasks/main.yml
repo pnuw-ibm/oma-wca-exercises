@@ -1,112 +1,24 @@
 ---
 - name: Create /ibmdata/htdocs directory root:root
-  # Content suggestion provided by Ansible Lightspeed
-  ansible.builtin.file:
-    path: /ibmdata/htdocs
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
-
 
 - name: Install apache httpd
-  # Content suggestion provided by Ansible Lightspeed
-  ansible.builtin.package:
-    name: httpd
-    state: present
-
-
 
 - name: Configure seport to listen on tcp 8080 and 8443 using community.general.seport
-  # Content suggestion provided by Ansible Lightspeed
-  community.general.seport:
-    ports:
-      - 8080
-      - 8443
-    proto: tcp
-    setype: http_port_t
-    state: present
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 - name: Enable httpd to start at boot
-  # Content suggestion provided by Ansible Lightspeed
-  ansible.builtin.service:
-    name: httpd
-    enabled: true
 
 - name: Open firewall ports 8080 & 8443
-  # Content suggestion provided by Ansible Lightspeed
-  ansible.posix.firewalld:
-    port: "{{ item }}"
-    permanent: true
-    state: enabled
-    immediate: true
-  loop:
-    - 8080/tcp
-    - 8443/tcp
-
 
 - name: Create /var/log/httpd directory owned by root:root with 0750 permissions
-  # Content suggestion provided by Ansible Lightspeed
-  ansible.builtin.file:
-    path: /var/log/httpd
-    state: directory
-    owner: root
-    group: root
-    mode: '0750'
-  # when:
-  #   - configure_strategy | bool
-  #   - file_permissions_var_log_httpd | bool
-  #   - low_complexity | bool
-  #   - low_disruption | bool
-  #   - medium_severity | bool
-  #   - no_reboot_needed | bool
-  #   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-
 
 - name: Create httpd.conf from a template and save as /etc/httpd/conf/httpd.conf
-  # Content suggestion provided by Ansible Lightspeed
-  ansible.builtin.template:
-    src: httpd.conf.j2
-    dest: /etc/httpd/conf/httpd.conf
-    owner: root
-    group: root
-    mode: '0644'
-
 
 - name: Start httpd
-  # Content suggestion provided by Ansible Lightspeed
-  ansible.builtin.service:
-    name: httpd
-    state: started
-    enabled: true
+
 
 
 - name: Create index.html from a template and save it as /ibmdata/htdocs/index.html owned by apache:apache
-  # Content suggestion provided by Ansible Lightspeed
-  ansible.builtin.template:
-    src: index.html.j2
-    dest: /ibmdata/htdocs/index.html
-    owner: apache
-    group: apache
-    mode: '0644'
-
 
 - name: Set SELinux to Permissive
-  # Content suggestion provided by Ansible Lightspeed
-  ansible.posix.selinux:
-    policy: targeted
-    state: permissive
-
