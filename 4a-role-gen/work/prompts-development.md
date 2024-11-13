@@ -1,4 +1,4 @@
-# prompts.md
+# prompts-development.md
 
 ## Keep your prompts here
 
@@ -53,7 +53,7 @@ Deploy a new IBM MQ docker container on OpenShift with a route.
 
 Create an ansible playbook that deploys IBM MQ on OpenShift.
 
-### Prompts for WCA@IBM
+### Prompts for IBM Granite.Code / watsonx.ai Prompt Lab
 
 You are an Ansible engineer. Recommend the best way to parameterize this ansible role.
 
