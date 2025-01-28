@@ -35,6 +35,9 @@ In the IBM Granite.Code chat tool, click on the hamburger menu and create a new 
 ```text
 System: You are an ansible engineer. Question: Write an Ansible playbook that deploys IBM MQ on OpenShift with an exposed route.
 
+# Optional - in case the result uses ansible.builtin.command and oc
+Question: Rewrite the playbook using the kubernetes.core collection.
+
 Question: Recommend ways to parameterize this playbook.
 
 Question: Write the same playbook using recommended parameters.
