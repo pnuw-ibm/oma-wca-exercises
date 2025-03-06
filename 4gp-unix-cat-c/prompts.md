@@ -6,8 +6,7 @@ Contains natural language prompts to use for a demonstration of ollama, IBM Gran
 
 ## Prerequisites
 
-- ollama
-- IBM Granite.Code extension for Microsoft VS Code (optional)
+- IBM watsonx Code Assistant extension for Microsoft VS Code
 
 The installation of these prerequisites are covered elsewhere.
 
@@ -16,7 +15,7 @@ In ollama, I used `granite-code:8b` on an M1 Pro-based MacBook, e.g., `ollama ru
 ## To Do
 
 - Test this with `granite-code:20b`
-- Test this with IBM watsonx Code Assistant
+- Test this with `granite3.2`
 
 ## Prompts
 
@@ -28,8 +27,8 @@ In ollama, I used `granite-code:8b` on an M1 Pro-based MacBook, e.g., `ollama ru
 
 ## Sample results
 
-See [`sample-results.md`](./sample-results) in this folder for sample output you can use as a reference for both preparing for and giving the demo. 
+See [`sample-results.md`](./sample-results) in this folder for sample output you can use as a reference for both preparing for and giving the demo.
 
 ## Author
 
-pete nuwayser pnuw@ibm.com 20241009
+pete nuwayser pnuw@ibm.com 20250305
