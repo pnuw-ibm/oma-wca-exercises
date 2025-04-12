@@ -14,6 +14,12 @@ Download cis benchmark for rhel9 x86_64. Make a copy of the benchmark files. Cre
 
 Create a role called ansible-dev-macos that deploys homebrew on macOS and maintains a list of homebrew packages and casks that a typical Ansible engineer would need, such as python, pip, ansible, ansible-lint, the Ansible module python SDK, etc.
 
+Create a role that gathers the names of all the homebrew packages and casks that are currently installed on my macos laptop, so that they can be installed on a new laptop using Ansible.
+
+Create a role that gathers the names of all the homebrew packages and casks that are currently installed on my macos laptop. Include a task that loops through the list of packages and installs them.
+
+
+
 ## OpenShift VMware IPI Bastion Host - vCenter Certs Installation
 
 Download the vSphere vCenter certificates from the vCenter server, install them on the bastion host, and update the CA trust.
