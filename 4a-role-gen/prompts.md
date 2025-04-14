@@ -18,6 +18,8 @@ Create a role that gathers the names of all the homebrew packages and casks that
 
 Create a role that gathers the names of all the homebrew packages and casks that are currently installed on my macos laptop. Include a task that loops through the list of packages and installs them.
 
+Write tasks/main.yml that installs xcode-select, accepts the xcodebuild license, installs Homebrew from github, and installs git using Homebrew.
+
 
 
 ## OpenShift VMware IPI Bastion Host - vCenter Certs Installation
