@@ -52,6 +52,28 @@ This is more specific, but then you notice the proposed content suggests passing
 
 By being more specific, you can generate more useful code and spend less time correcting. The good news here is that watsonx Code Assistant retains context in each chat, which means you can propose corrections conversationally instead of having to rewrite the entire prompt.
 
+### Parameterize Parameterize Parameterize
+
+If you use hard-coded information in your prompt, there's an excellent chance the response will be anonymized or otherwise different from what you prompted. For example, if you prompt with:
+
+```bash
+You are a Cisco NXOS engineer. Write a script that sets the secondary interface IPv4 address for Ethernet1/2 to 194.99.2.254/24.
+```
+
+You might get a response that uses a different number in the fourth octet of the IPv4 address, or a different IPv4 address entirely. Consider this improvement:
+
+```bash
+You are a Cisco NXOS engineer. Write a script that sets the secondary interface IPv4 address for a parameterized layer 1 interface name to a parameterized IPv4 address formatted as CIDR.
+```
+
+You could even give an example:
+
+```bash
+You are a Cisco NXOS engineer. Write a script that sets the secondary interface IPv4 address for a parameterized layer 1 interface name like "Ethernet1/2" to a parameterized IPv4 address formatted as CIDR like "192.168.1.200/24."
+```
+
+Experiment with different approaches, but remember that the use of hard-coded data is an anti-pattern.
+
 ### Also good to remember
 
 **Neatness counts!** Be sure to capitalize the beginning of your sentences, separate sections using commas, and end sentences with periods or question marks. You may even find that good manners get you different results: try using "please" and see what happens!
